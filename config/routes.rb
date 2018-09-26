@@ -1,2 +1,2 @@
-QuickSearch::MarylandMapSearcher::Engine.routes.draw do
+QuickSearchMarylandMapSearcher::Engine.routes.draw do
 end
