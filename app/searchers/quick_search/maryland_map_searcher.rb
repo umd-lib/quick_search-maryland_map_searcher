@@ -10,6 +10,7 @@ module QuickSearch
 
     def results
       return @results_list if @results_list
+
       @results_list = @response['resultList'].map do |value|
         result = OpenStruct.new(title: value['displayName'],
                                 link: value['detailLink'],
@@ -32,6 +33,7 @@ module QuickSearch
       return nil if start_year.empty? && !digitized
       return digitized_image_msg if start_year.empty?
       return start_year unless digitized
+
       "#{start_year} - #{digitized_image_msg}"
     end
 
