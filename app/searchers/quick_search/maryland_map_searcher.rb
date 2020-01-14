@@ -12,7 +12,7 @@ module QuickSearch
       return @results_list if @results_list
 
       @results_list = @response['resultList'].map do |value|
-        result = OpenStruct.new(title: value['displayName'],
+        result = OpenStruct.new(title: value['title'],
                                 link: value['detailLink'],
                                 description: description(value))
         result.date << build_restricted_link if value['restricted']
